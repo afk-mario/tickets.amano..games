@@ -32,7 +32,7 @@ a {
   width: 100%;
   background: black;
   color: white;
-  padding: var(--spacing-01) var(--spacing-04);
+  padding: var(--spacing-01) var(--spacing-02);
   display: flex;
   flex-flow: row;
   align-items: center;

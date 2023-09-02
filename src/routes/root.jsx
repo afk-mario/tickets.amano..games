@@ -21,10 +21,10 @@ export default function Root() {
         <Link to="/latest">Último</Link>
       </header>
       <div className="c-ticket-list">
-        {data.map((item, i) => {
+        {data.map((item) => {
           return (
             <Link to={`/ticket/${item.id}`} key={item.id}>
-              <Ticket index={i} {...item} />
+              <Ticket {...item} />
             </Link>
           );
         })}

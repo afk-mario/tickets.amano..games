@@ -8,10 +8,10 @@ const options = {
 };
 
 function Ticket({
-  index,
   gems_collected: gemsCollected,
   gems_total: gemsTotal,
   created_at: createdAt,
+  row_number: index,
 }) {
   const createdAtDate = new Date(createdAt);
 
@@ -45,16 +45,14 @@ function Ticket({
           src="/img/wishlist-qr.png"
           alt="wishlist on steam"
         />
-        <span>
-          <a href="https://amano.games">amano.games</a>
-        </span>
+        <span>amano.games</span>
       </footer>
     </article>
   );
 }
 
 Ticket.propTypes = {
-  index: PropTypes.number.isRequired,
+  row_number: PropTypes.number.isRequired,
   gems_collected: PropTypes.number.isRequired,
   gems_total: PropTypes.number.isRequired,
   created_at: PropTypes.string.isRequired,

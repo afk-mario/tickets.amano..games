@@ -5,5 +5,21 @@ const supabase = createClient(
 );
 
 export async function getTickets() {
-  return supabase.from("players").select();
+  return supabase
+    .from("numbered_players")
+    .select()
+    .order("id", { ascending: false });
+}
+
+export async function getLatestTicket() {
+  return supabase
+    .from("numbered_players")
+    .select()
+    .order("id", { ascending: false })
+    .limit(1)
+    .single();
+}
+
+export async function getTicket({ ticketId }) {
+  return supabase.from("numbered_players").select().eq("id", ticketId).single();
 }
