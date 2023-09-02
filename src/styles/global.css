@@ -12,15 +12,18 @@ body {
   background: black;
 }
 
-img {
-}
-
 h2 {
   font-size: calc(8px * var(--scale) * 2);
+  font-weight: normal;
 }
 
 p,
 span,
 a {
-  font-size: calc(8px * (var(--scale) + 1));
+  font-size: calc(8px * (var(--scale) * 2));
+}
+
+a {
+  text-decoration: none;
+  color: black;
 }
