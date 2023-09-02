@@ -1,0 +1,26 @@
+* {
+  font-smooth: never !important;
+  -webkit-font-smoothing: !important;
+
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+body {
+  font-family: "Corset";
+  background: black;
+}
+
+img {
+}
+
+h2 {
+  font-size: calc(8px * var(--scale) * 2);
+}
+
+p,
+span,
+a {
+  font-size: calc(8px * (var(--scale) + 1));
+}
