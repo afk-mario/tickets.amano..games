@@ -11,15 +11,15 @@ body {
   font-family: "Corset";
 }
 
-h2 {
-  font-size: calc(8px * var(--scale) * 2);
-  font-weight: normal;
-}
-
+h1,
+h2,
+h3,
 p,
 span,
 a {
+  line-height: 1em;
   font-size: calc(8px * (var(--scale) * 2));
+  font-weight: normal;
 }
 
 a {
