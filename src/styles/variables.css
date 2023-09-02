@@ -6,10 +6,13 @@
 
   --color-01: #ffffff;
   --color-02: #000000;
+  --color-03: #ffbc2f;
+  --color-04: #e5ffff;
 
   --color-bg: var(--color-01);
   --color-fg: var(--color-02);
   --color-border: var(--color-02);
+  --color-hl: var(--color-04);
 
   --spacing-01: 8px;
   --spacing-q: calc(var(--spacing-01) * 0.25);

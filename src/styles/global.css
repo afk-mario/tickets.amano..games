@@ -40,6 +40,11 @@ a {
 
 .site-navigation a {
   color: white;
+  text-decoration: underline;
+}
+
+.site-navigation a:hover {
+  color: var(--color-03);
 }
 
 .site-navigation img {

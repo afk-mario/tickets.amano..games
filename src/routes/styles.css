@@ -2,4 +2,5 @@
   display: flex;
   flex-flow: column;
   gap: var(--spacing-01);
+  align-items: center;
 }
