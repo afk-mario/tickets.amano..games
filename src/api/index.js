@@ -6,14 +6,14 @@ const supabase = createClient(
 
 export async function getTickets() {
   return supabase
-    .from("numbered_players")
+    .from("player_with_metadata")
     .select()
     .order("id", { ascending: false });
 }
 
 export async function getLatestTicket() {
   return supabase
-    .from("numbered_players")
+    .from("player_with_metadata")
     .select()
     .order("id", { ascending: false })
     .limit(1)
@@ -21,5 +21,9 @@ export async function getLatestTicket() {
 }
 
 export async function getTicket({ ticketId }) {
-  return supabase.from("numbered_players").select().eq("id", ticketId).single();
+  return supabase
+    .from("player_with_metadata")
+    .select()
+    .eq("id", ticketId)
+    .single();
 }

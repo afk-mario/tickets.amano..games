@@ -12,8 +12,12 @@ function Ticket({
   gems_total: gemsTotal,
   created_at: createdAt,
   row_number: index,
+  play_time: playTime,
 }) {
   const createdAtDate = new Date(createdAt);
+  const playTimeDate = new Date(null);
+  playTimeDate.setSeconds(playTime);
+  const playTimeS = playTimeDate.toISOString().substr(11, 8);
 
   return (
     <article className="c-ticket">
@@ -28,15 +32,18 @@ function Ticket({
           <h2>¡Gracias por jugar!</h2>
         </header>
         <div className="info">
+          <time dateTime={createdAt}>
+            {createdAtDate.toLocaleDateString("es-MX", options)}
+          </time>
+          <span>{playTimeS}</span>
+        </div>
+        <div className="info">
           <span>#{(index + 1).toString().padStart(4, "0")}</span>
           <span className="gems">
             <span>{gemsCollected.toString().padStart(3, "0")}</span>
             <span>{gemsTotal.toString().padStart(3, "0")}</span>
           </span>
         </div>
-        <time dateTime={createdAt}>
-          {createdAtDate.toLocaleDateString("es-MX", options)}
-        </time>
       </div>
       <hr />
       <footer>
@@ -56,6 +63,7 @@ Ticket.propTypes = {
   gems_collected: PropTypes.number.isRequired,
   gems_total: PropTypes.number.isRequired,
   created_at: PropTypes.string.isRequired,
+  play_time: PropTypes.number.isRequired,
 };
 
 export default Ticket;
