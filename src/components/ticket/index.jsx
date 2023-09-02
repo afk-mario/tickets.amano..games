@@ -11,7 +11,7 @@ function Ticket({
       <div
         className="birb"
         style={{
-          "--index": `${index}`,
+          "--index": `${index % 31}`,
         }}
       />
       <header>
