@@ -66,6 +66,7 @@
   gap: var(--spacing-01);
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 }
 
 .c-ticket footer {

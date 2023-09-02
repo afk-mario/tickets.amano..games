@@ -1,11 +1,20 @@
 import PropTypes from "prop-types";
 import "./styles.css";
 
+const options = {
+  year: "2-digit",
+  month: "2-digit",
+  day: "2-digit",
+};
+
 function Ticket({
   index,
   gems_collected: gemsCollected,
   gems_total: gemsTotal,
+  created_at: createdAt,
 }) {
+  const createdAtDate = new Date(createdAt);
+
   return (
     <article className="c-ticket">
       <div className="c-ticket-wrapper">
@@ -25,6 +34,9 @@ function Ticket({
             <span>{gemsTotal.toString().padStart(3, "0")}</span>
           </span>
         </div>
+        <time dateTime={createdAt}>
+          {createdAtDate.toLocaleDateString("es-MX", options)}
+        </time>
       </div>
       <hr />
       <footer>
@@ -45,6 +57,7 @@ Ticket.propTypes = {
   index: PropTypes.number.isRequired,
   gems_collected: PropTypes.number.isRequired,
   gems_total: PropTypes.number.isRequired,
+  created_at: PropTypes.string.isRequired,
 };
 
 export default Ticket;
