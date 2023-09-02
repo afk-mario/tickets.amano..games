@@ -18,7 +18,7 @@ function Ticket({
         <h2>¡Gracias por jugar!</h2>
       </header>
       <div className="info">
-        <span>#{(index + 1).toString().padStart(3, "0")}</span>
+        <span>#{(index + 1).toString().padStart(4, "0")}</span>
         <span className="gems">
           <span>{gemsCollected.toString().padStart(3, "0")}</span>
           <span>{gemsTotal.toString().padStart(3, "0")}</span>
