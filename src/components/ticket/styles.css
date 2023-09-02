@@ -1,8 +1,8 @@
 .c-ticket {
   background: white;
-  padding: var(--spacing-01);
-  width: var(--width);
-  min-height: var(--width);
+  padding-bottom: var(--spacing-02);
+  width: 100%;
+  max-width: var(--width);
   display: flex;
   flex-flow: column;
   gap: var(--spacing-01);

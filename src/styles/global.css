@@ -9,7 +9,6 @@
 
 body {
   font-family: "Corset";
-  background: black;
 }
 
 h2 {
@@ -26,4 +25,29 @@ a {
 a {
   text-decoration: none;
   color: black;
+}
+
+.site-navigation {
+  width: 100%;
+  background: black;
+  color: white;
+  padding: var(--spacing-01) var(--spacing-04);
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-navigation a {
+  color: white;
+}
+
+.site-navigation img {
+  width: 1em;
+  height: auto;
+}
+
+footer.site-navigation {
+  position: absolute;
+  top: 100vh;
 }

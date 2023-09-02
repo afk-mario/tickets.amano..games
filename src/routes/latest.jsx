@@ -16,8 +16,16 @@ export default function Latest() {
   const ticket = data[ticketIndex];
 
   return (
-    <Link to={`/ticket/${ticket.id}`}>
-      <TicketComponent {...ticket} index={ticketIndex} />
-    </Link>
+    <>
+      <Link to={`/ticket/${ticket.id}`}>
+        <TicketComponent {...ticket} index={ticketIndex} />
+      </Link>
+      <footer className="site-navigation">
+        <Link to="/">
+          <img src="/favicon.svg" alt="eye" />
+        </Link>
+        <Link to="/latest">Último</Link>
+      </footer>
+    </>
   );
 }

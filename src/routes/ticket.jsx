@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 
 import TicketComponent from "../components/ticket";
 
@@ -11,9 +11,7 @@ export async function loader() {
 export default function Ticket() {
   const { ticketId } = useParams();
 
-  console.log("ticketId", ticketId);
   const { data } = useLoaderData();
-  console.log("data", data);
 
   const ticketIndex = data.findIndex((item) => {
     return item.id === Number(ticketId);
@@ -21,5 +19,15 @@ export default function Ticket() {
 
   const ticket = data[ticketIndex];
 
-  return <TicketComponent {...ticket} index={ticketIndex} />;
+  return (
+    <>
+      <TicketComponent {...ticket} index={ticketIndex} />
+      <footer className="site-navigation">
+        <Link to="/">
+          <img src="/favicon.svg" alt="eye" />
+        </Link>
+        <Link to="/latest">Último</Link>
+      </footer>
+    </>
+  );
 }
