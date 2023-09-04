@@ -18,7 +18,8 @@ p,
 span,
 time,
 a {
-  line-height: 1em;
+  line-height: calc(11px * var(--scale));
+  /* line-height: 1em; */
   font-size: calc(8px * (var(--scale) * 2));
   font-weight: normal;
 }
