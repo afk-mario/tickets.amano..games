@@ -1,15 +1,122 @@
 .c-ticket {
-  padding: var(--spacing-01);
-  padding-bottom: var(--spacing-02);
-  width: 100%;
+  --border-width: 4px;
+  --border-radius: 40px;
+  --border-width-neg: calc(var(--border-width) * -1));
+
+
+  width: max-content;
   max-width: var(--width);
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  color: black;
+  text-decoration: none;
+  position: relative;
+
+}
+
+.c-ticket-inner {
   display: flex;
   flex-flow: column;
   gap: var(--spacing-04);
   align-items: center;
-  color: black;
-  text-decoration: none;
   position: relative;
+  border: var(--border-width) solid black;
+}
+
+
+.c-ticket .corner {
+  position: absolute;
+  overflow: hidden;
+  width: calc(var(--border-radius) / 2);
+  height: calc(var(--border-radius) / 2);
+}
+
+.c-ticket .corner::before {
+  display: block;
+  content: " ";
+  width: var(--border-radius);
+  height: var(--border-radius);
+  border: var(--border-width) solid black;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.c-ticket .corner[data-corner="top-right"] {
+  top: -4px;
+  right: -4px;
+}
+
+.c-ticket .corner[data-corner="top-right"]::before {
+  transform: translate(0, -50%);
+}
+
+.c-ticket .corner[data-corner="top-left"] {
+  top: -4px;
+  left: -4px;
+}
+
+.c-ticket .corner[data-corner="top-left"]::before {
+  transform: translate(-50%, -50%);
+}
+
+.c-ticket .corner[data-corner="bottom-left"] {
+  bottom: -4px;
+  left: -4px;
+}
+
+.c-ticket .corner[data-corner="bottom-left"]::before {
+  transform: translate(-50%, 0%);
+}
+
+.c-ticket .corner[data-corner="bottom-right"] {
+  bottom: -4px;
+  right: -4px;
+}
+
+.c-ticket .corner[data-corner="bottom-right"]::before {
+  transform: translate(0%, 0%);
+}
+
+.c-ticket .corner[data-corner="middle-right"] {
+  right: -4px;
+}
+
+.c-ticket .corner[data-corner="middle-left"] {
+  left: -4px;
+}
+
+.c-ticket .cutout {
+  position: absolute;
+  width: calc(var(--border-radius) / 2);
+  height: var(--border-radius);
+  top: 0;
+  transform: translate(0, -50%);
+  overflow: hidden;
+}
+
+.c-ticket .cutout::before {
+  display: block;
+  content: " ";
+  width: var(--border-radius);
+  height: var(--border-radius);
+  background: white;
+  border: var(--border-width) solid black;
+  border-radius: 50%;
+}
+
+.c-ticket .cutout[data-side="right"] {
+  right: calc(-4px);
+}
+
+.c-ticket .cutout[data-side="left"] {
+  left: calc(-4px);
+}
+
+.c-ticket .cutout[data-side="left"]::before {
+  transform: translate(-50%, 0);
 }
 
 .c-ticket-wrapper {
@@ -17,10 +124,25 @@
   flex-flow: column;
   gap: var(--spacing-01);
   align-items: center;
+  padding: var(--spacing-02) var(--spacing-02) 0 var(--spacing-02);
+}
+
+.c-ticket .logo {
+  width: 217px;
+  height: auto;
+}
+
+.c-ticket .divider {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: center;
 }
 
 .c-ticket hr {
-  width: calc(100% - var(--spacing-04));
+  width: calc(100% - var(--border-radius));
   height: 1px;
   border: 2px dashed black;
 }
@@ -35,6 +157,7 @@
   mix-blend-mode: multiply;
   background-color: transparent;
   transition: 0.2s ease all;
+  pointer-events: none;
 }
 
 .c-ticket:hover::after {
@@ -71,10 +194,20 @@
 }
 
 .c-ticket footer {
+  width: 100%;
   display: flex;
   flex-flow: column;
-  gap: var(--spacing-01);
+  gap: var(--spacing-04);
   align-items: center;
+}
+
+.c-ticket .web {
+  background: black;
+  color: white;
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding-bottom: var(--spacing-02);
 }
 
 .c-ticket .gems {

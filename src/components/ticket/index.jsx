@@ -21,39 +21,51 @@ function Ticket({
 
   return (
     <article className="c-ticket">
-      <div className="c-ticket-wrapper">
-        <div
-          className="birb"
-          style={{
-            "--index": `${index % 31}`,
-          }}
-        />
-        <header>
-          <h2>¡Gracias por jugar!</h2>
-        </header>
-        <div className="info">
-          <time dateTime={createdAt}>
-            {createdAtDate.toLocaleDateString("es-MX", options)}
-          </time>
-          <span>{playTimeS}</span>
+      <div className="c-ticket-inner">
+        <span className="corner" data-corner="top-right"></span>
+        <span className="corner" data-corner="top-left"></span>
+        <span className="corner" data-corner="bottom-left"></span>
+        <span className="corner" data-corner="bottom-right"></span>
+
+        <div className="c-ticket-wrapper">
+          <img className="logo" src="/img/logo.png" alt="Don Salmon" />
+          <div
+            className="birb"
+            style={{
+              "--index": `${index % 31}`,
+            }}
+          />
+          <header>
+            <h2>¡Gracias por jugar!</h2>
+          </header>
+          <div className="info">
+            <time dateTime={createdAt}>
+              {createdAtDate.toLocaleDateString("es-MX", options)}
+            </time>
+            <span>{playTimeS}</span>
+          </div>
+          <div className="info">
+            <span>#{(index + 1).toString().padStart(4, "0")}</span>
+            <span className="gems">
+              <span>{gemsCollected.toString().padStart(3, "0")}</span>
+              <span>{gemsTotal.toString().padStart(3, "0")}</span>
+            </span>
+          </div>
         </div>
-        <div className="info">
-          <span>#{(index + 1).toString().padStart(4, "0")}</span>
-          <span className="gems">
-            <span>{gemsCollected.toString().padStart(3, "0")}</span>
-            <span>{gemsTotal.toString().padStart(3, "0")}</span>
-          </span>
+        <div className="divider">
+          <span className="cutout" data-side="left"></span>
+          <hr />
+          <span className="cutout" data-side="right"></span>
         </div>
+        <footer>
+          <img
+            className="qr"
+            src="/img/wishlist-qr.png"
+            alt="wishlist on steam"
+          />
+          <span className="web">amano.games</span>
+        </footer>
       </div>
-      <hr />
-      <footer>
-        <img
-          className="qr"
-          src="/img/wishlist-qr.png"
-          alt="wishlist on steam"
-        />
-        <span>amano.games</span>
-      </footer>
     </article>
   );
 }

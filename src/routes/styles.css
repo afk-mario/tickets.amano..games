@@ -1,6 +1,7 @@
 .c-ticket-list {
   display: flex;
   flex-flow: column;
-  gap: var(--spacing-01);
+  gap: var(--spacing-04);
   align-items: center;
+  padding: var(--spacing-02);
 }
