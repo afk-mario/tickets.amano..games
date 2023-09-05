@@ -32,7 +32,7 @@ function Ticket({
           <div
             className="birb"
             style={{
-              "--index": `${index % 31}`,
+              "--index": `${(index - 1) % 31}`,
             }}
           />
           <header>
@@ -45,7 +45,7 @@ function Ticket({
             <span>{playTimeS}</span>
           </div>
           <div className="info">
-            <span>#{(index + 1).toString().padStart(4, "0")}</span>
+            <span>#{index.toString().padStart(4, "0")}</span>
             <span className="gems">
               <span>{gemsCollected.toString().padStart(3, "0")}</span>
               <span>{gemsTotal.toString().padStart(3, "0")}</span>
