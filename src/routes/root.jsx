@@ -18,7 +18,11 @@ export default function Root() {
         <Link to="/">
           <img src="/favicon.svg" alt="eye" />
         </Link>
-        <Link to="/latest">Último</Link>
+        <nav>
+          <Link to="/new">New</Link>
+          <Link to="/login">Login</Link>
+          <Link to="/latest">Último</Link>
+        </nav>
       </header>
       <div className="c-ticket-list">
         {data.map((item) => {

@@ -20,7 +20,10 @@ export default function Latest() {
         <Link to="/">
           <img src="/favicon.svg" alt="eye" />
         </Link>
-        <Link to="/latest">Último</Link>
+        <nav>
+          <Link to="/login">Login</Link>
+          <Link to="/latest">Último</Link>
+        </nav>
       </footer>
     </>
   );

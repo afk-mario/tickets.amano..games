@@ -7,6 +7,39 @@
   image-rendering: crisp-edges;
 }
 
+form {
+  display: flex;
+  flex-flow: column;
+  padding: var(--spacing-03);
+  gap: var(--spacing-02);
+  border: 2px solid black;
+  border-radius: var(--spacing-01);
+  background: black;
+}
+
+input {
+  background: white;
+  color: black;
+  padding: 0 var(--spacing-02);
+  border: 2px solid black;
+  border-radius: var(--spacing-h);
+}
+
+button {
+  margin-left: auto;
+  width: max-content;
+  background: white;
+  color: black;
+  padding: var(--spacing-01) var(--spacing-02);
+  border: 2px solid black;
+  border-radius: var(--spacing-h);
+  cursor: pointer;
+}
+
+label {
+  color: white;
+}
+
 body {
   font-family: "Corset";
 }
@@ -17,6 +50,9 @@ h3,
 p,
 span,
 time,
+button,
+input,
+label,
 a {
   line-height: calc(11px * var(--scale));
   /* line-height: 1em; */
@@ -40,13 +76,28 @@ a {
   justify-content: space-between;
 }
 
+.site-navigation button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.site-navigation button,
 .site-navigation a {
   color: white;
   text-decoration: underline;
 }
 
+.site-navigation button:hover,
 .site-navigation a:hover {
   color: var(--color-03);
+}
+
+.site-navigation nav {
+  display: flex;
+  flex-flow: row;
+  gap: var(--spacing-02);
 }
 
 .site-navigation img {

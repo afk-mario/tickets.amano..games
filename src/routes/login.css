@@ -1,0 +1,14 @@
+.p-login {
+  display: flex;
+  flex-flow: column;
+  gap: var(--spacing-02);
+}
+
+.p-login .wrapper {
+  max-width: var(--width);
+  margin: auto;
+  padding: var(--spacing-02);
+  display: flex;
+  flex-flow: column;
+  gap: var(--spacing-02);
+}

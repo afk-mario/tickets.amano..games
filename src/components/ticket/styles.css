@@ -193,6 +193,10 @@
   width: 100%;
 }
 
+.c-ticket .info time:only-child{
+  margin: auto;
+}
+
 .c-ticket footer {
   width: 100%;
   display: flex;

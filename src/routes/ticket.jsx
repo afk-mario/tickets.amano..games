@@ -1,8 +1,8 @@
-import { Link, useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 
 import TicketComponent from "../components/ticket";
 
-import { getTicket } from "../api";
+import { deleteTicket, getTicket } from "../api";
 
 export async function loader({ params }) {
   const { ticketId } = params;
@@ -10,6 +10,7 @@ export async function loader({ params }) {
 }
 
 export default function Ticket() {
+  const navigate = useNavigate();
   const { data: ticket } = useLoaderData();
 
   return (
@@ -19,7 +20,19 @@ export default function Ticket() {
         <Link to="/">
           <img src="/favicon.svg" alt="eye" />
         </Link>
-        <Link to="/latest">Último</Link>
+        <nav>
+          <button
+            type="button"
+            onClick={async () => {
+              await deleteTicket({ ticketId: ticket.id });
+              navigate("/");
+            }}
+          >
+            Delete
+          </button>
+          <Link to="/login">Login</Link>
+          <Link to="/latest">Último</Link>
+        </nav>
       </footer>
     </>
   );

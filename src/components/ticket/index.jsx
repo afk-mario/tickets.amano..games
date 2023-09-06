@@ -42,7 +42,7 @@ function Ticket({
             <time dateTime={createdAt}>
               {createdAtDate.toLocaleDateString("es-MX", options)}
             </time>
-            <span>{playTimeS}</span>
+            {playTime > 0 ? <span>{playTimeS}</span> : null}
           </div>
           <div className="info">
             <span>#{index.toString().padStart(4, "0")}</span>
