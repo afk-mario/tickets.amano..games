@@ -18,6 +18,8 @@ form {
 }
 
 input {
+  width: 100%;
+  min-width: none;
   background: white;
   color: black;
   padding: 0 var(--spacing-02);
